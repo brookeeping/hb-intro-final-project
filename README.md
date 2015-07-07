@@ -1,6 +1,7 @@
-1. Create a board with 7 columns and 6 rows.
-2. Player A is checker color red and Player B is checker color yellow.
-3. Each player gets 21 checkers.
-4. Each player takes turns dropping one checker into the board. 
-5. The point of the game is for each player to get 4 of their checkers in a row either vertically, horizontally or diagonally. 
-6. When one player has reached 4 checkers in a row, stop game and announce "Player __ wins!"
+Battleship -
+
+1. Player competes against random computer integar.
+2. Computer chooses a spot on the 6 x 6 grid.
+3. Player tries to guess a spot on the grid where the computer's "battleship" may be.
+4. Player gets 4 turns to fire at the battleship.
+5. If player hits the computer's battleship, the player wins the game by "sinking the battleship."

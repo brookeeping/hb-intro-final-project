@@ -1,37 +1,58 @@
-player = ('YC','RC')
-num_moves_made = 0
-placement = range(52)		
-# Draw the grid
-def draw_board(moves):
-	print " %s | %s | %s | %s | %s | %s | %s " % (moves[10], moves[11], moves[12],moves[13],moves[14],moves[15],moves[16])
-	print "----------------------------------"
-	print " %s | %s | %s | %s | %s | %s | %s " % (moves[17], moves[18], moves[19],moves[20],moves[21],moves[22],moves[23])
-	print "----------------------------------"
-	print " %s | %s | %s | %s | %s | %s | %s " % (moves[24], moves[25], moves[26],moves[27],moves[28],moves[29],moves[30])
-	print "----------------------------------"
-	print " %s | %s | %s | %s | %s | %s | %s " % (moves[31], moves[32], moves[33],moves[34],moves[35],moves[36],moves[37])
-	print "----------------------------------"
-	print " %s | %s | %s | %s | %s | %s | %s " % (moves[38], moves[39], moves[40],moves[41],moves[42],moves[43],moves[44])
-	print "----------------------------------"
-	print " %s | %s | %s | %s | %s | %s | %s " % (moves[45], moves[46], moves[47],moves[48],moves[49],moves[50],moves[51])
+class ConnectFour(object):	
+	def __init__(self):
+		self.board = [[" "," "," "," "," "," "],
+						[" "," "," "," "," "," "],
+						[" "," "," "," "," "," "],
+						[" "," "," "," "," "," "],
+						[" "," "," "," "," "," "],
+						[" "," "," "," "," "," "],
+						[" "," "," "," "," "," "]]
 
-draw_board(placement)
-move = int(raw_input("Yellow Checker, where do you want to move? "))
-placement[move] = "YC"
-draw_board(placement)
-move = int(raw_input("Red Checker, where do you want to move? "))
-placement[move] = "RC"
-draw_board(placement)
-move = int(raw_input("Mellow yellow it's your turn! "))
-placement[move] = "YC"
-draw_board(placement)
-move = int(raw_input("Your turn you royal redness! "))
-placement[move] = "RC"
-draw_board(placement)
+	def draw_board(self):
+		print "| %s | %s | %s | %s | %s | %s | %s |" % (self.board[0][0], self.board[1][0], self.board[2][0], self.board[3][0], self.board[4][0], self.board[5][0], self.board[6][0])
+		print "| %s | %s | %s | %s | %s | %s | %s |" % (self.board[0][1], self.board[1][1], self.board[2][1], self.board[3][1], self.board[4][1], self.board[5][1], self.board[6][1])
+		print "| %s | %s | %s | %s | %s | %s | %s |" % (self.board[0][2], self.board[1][2], self.board[2][2], self.board[3][2], self.board[4][2], self.board[5][2], self.board[6][2])
+		print "| %s | %s | %s | %s | %s | %s | %s |" % (self.board[0][3], self.board[1][3], self.board[2][3], self.board[3][3], self.board[4][3], self.board[5][3], self.board[6][3])
+		print "| %s | %s | %s | %s | %s | %s | %s |" % (self.board[0][4], self.board[1][4], self.board[2][4], self.board[3][4], self.board[4][4], self.board[5][4], self.board[6][4])
+		print "| %s | %s | %s | %s | %s | %s | %s |" % (self.board[0][5], self.board[1][5], self.board[2][5], self.board[3][5], self.board[4][5], self.board[5][5], self.board[6][5])
+		print "-----------------------------"
+		print "  0 | 1 | 2 | 3 | 4 | 5 | 6  " 
 
-while(True):
-	move = int(raw_input("Player %s, where do you want to move? " % (player[num_moves_made%2])))
-	placement[move] = player[num_moves_made%2]
-	num_moves_made += 1
-	draw_board(placement)
-	if len(num_moves_made)
+	def add_piece(self, column,player):
+		rowPos = 0
+		while rowPos < 6:
+			if self.board[column][rowPos] != " ":
+				break
+			rowPos+=1    	
+		self.board[column][rowPos-1] = player
+
+	# def game_over(self):
+
+#write function to check if game is over, method of class connectfour
+#get input from user, while loop (while true), switching players
+
+my_board = ConnectFour()
+my_board.draw_board()
+my_board.add_piece(3, 1)
+my_board.draw_board()
+my_board.add_piece(3, 2)
+my_board.draw_board()
+
+player_a = "A"
+player_b = "B"
+
+def play_game():
+	print "Player A, you go first! Enter the column you wish to drop your checker, 0 to 5."
+	userInput = raw_input(">>> ")
+	if userInput.isdigit():
+		userInput = int(userInput)
+
+
+
+
+
+
+
+
+
+

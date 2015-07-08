@@ -1,10 +1,10 @@
-class ConnectFour(object):	
+class ConnectFour(object):	#board is object oriented in order to group methods to the list
 	def __init__(self):
 		self.board = [[" "," "," "," "," "," "],
 						[" "," "," "," "," "," "],
 						[" "," "," "," "," "," "],
 						[" "," "," "," "," "," "],
-						[" "," "," "," "," "," "],
+						[" "," "," "," "," "," "], 
 						[" "," "," "," "," "," "],
 						[" "," "," "," "," "," "]]
 
@@ -65,7 +65,9 @@ def play_game():
 		userInput = raw_input(">>> ")
 		if userInput.isdigit():
 			userInput = int(userInput)
-			if not my_board.is_column_full(userInput):
+			if userInput < 0 or userInput > 6:
+				print "Not a valid column"
+			elif not my_board.is_column_full(userInput):
 				my_board.add_piece(userInput, current_player)
 				break
 			else:
@@ -81,7 +83,7 @@ while True:
 		print "Player %s WINS!!!!!!!!!!" % current_player
 		# Ask if they want to resart if yes the
 		input = raw_input("Do you want to play again? Y or N ")
-		if input == "Y":
+		if input.lower() == "y":
 			current_player = "A"
 			my_board = ConnectFour()
 			continue

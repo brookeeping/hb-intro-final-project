@@ -1,7 +1,8 @@
-Battleship -
+Connect Four: 2 player game
 
-1. Player competes against random computer integar.
-2. Computer chooses a spot on the 6 x 6 grid.
-3. Player tries to guess a spot on the grid where the computer's "battleship" may be.
-4. Player gets 4 turns to fire at the battleship.
-5. If player hits the computer's battleship, the player wins the game by "sinking the battleship."
+1. Players choose who wants to be Player A or Player B.
+2. Player A will always be first. 
+3. Players choose which column they want to drop their "coin" in. 
+4. The coin will drop to the bottom of the column. If there is a coin already in that column, the next coin will drop on top.
+5. First player to get 4 of their coins in a row (vertical, hortizontal, or diagonal) wins the game.
+6. Players have the option of playing again, if "Y" for yes, board will clear and players can play again. 

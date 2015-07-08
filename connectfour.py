@@ -26,16 +26,11 @@ class ConnectFour(object):
 			rowPos+=1    	
 		self.board[column][rowPos-1] = player
 
-	def is_column_full(self, column):
+	def is_column_full(self, column): 
 		if self.board[column][0] != " ":
 			return True
 		return False
-	# def has_winner(self, current_player):
-	# 	haswinner = False
-	# 	for row in self.board:
-	# 		if row.count(current_player) == 4: #this doesnt count for 4 in a row, just counts 4 in the column 
-	# 			haswinner = True 
-	# 	return haswinner
+	
 	def isWinner(self, tile):
 		BOARDWIDTH = 7  # how many spaces wide the board is
 		BOARDHEIGHT = 6 # how many spaces tall the board is
@@ -61,10 +56,7 @@ class ConnectFour(object):
 					return True
 		return False
 
-	# def game_over(self):
-
-#write function to check if game is over, method of class connectfour
-#get input from user, while loop (while true), switching players() 
+	
 def play_game():
 	while True:
 		global current_player
@@ -86,7 +78,7 @@ while True:
 	play_game()
 	if my_board.isWinner(current_player):
 		my_board.draw_board()
-		print "%s is the winner!!" % current_player
+		print "Player %s WINS!!!!!!!!!!" % current_player
 		# Ask if they want to resart if yes the
 		input = raw_input("Do you want to play again? Y or N ")
 		if input == "Y":
